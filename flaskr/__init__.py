@@ -32,12 +32,13 @@ def create_app(test_config=None):
 #Home page
     @app.route("/")
     def index():
-        return render_template("index.html")
+        return render_template("home_page.html")
 
 
 #Page Second
     @app.route("/next_page")
     def next_page():
+        
         return render_template("next.html")
 
 
@@ -46,31 +47,3 @@ def create_app(test_config=None):
     return app
 
 
-
-
-"""
-    @app.route("/hello")
-    def hello():
-        return "Hello, World!"
-
-    # register the database commands
-    from flaskr import db
-
-    db.init_app(app)
-
-    # apply the blueprints to the app
-    from flaskr import auth, blog
-
-    #app.register_blueprint(auth.bp)
-    #app.register_blueprint(blog.bp)
-
-
-    #make url_for('index') == url_for('blog.index')
-    # in another app, you might define a separate main index here with
-    # app.route, while giving the blog blueprint a url_prefix, but for
-    # the tutorial the blog will be the main index
-    app.add_url_rule("/", endpoint="index")
-
-    
-"""
-    
